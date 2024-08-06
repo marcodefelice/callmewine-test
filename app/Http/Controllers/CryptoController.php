@@ -16,7 +16,7 @@ class CryptoController extends Controller
     public function index()
     {
         try {
-            $apiKey = 'c3f841e7-0fff-4d8e-985f-248d29747571';
+            $apiKey = config('services.coinmarketcap.key');
             $response = Http::withHeaders([
                 'X-CMC_PRO_API_KEY' => $apiKey
             ])->get('https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest', [
